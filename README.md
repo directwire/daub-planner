@@ -36,6 +36,24 @@ A plan is a JSON document:
 Full semantics, export details and downstream integration notes:
 [daub · docs/DOWNSTREAM_GUIDE.md](https://github.com/directwire/Daub/blob/main/docs/DOWNSTREAM_GUIDE.md).
 
+## Reference implementation
+
+The repository ships a complete, working planner under
+[reference/](reference/) — the production-derived implementation behind
+daub's own gallery paintings. It reads a reference image and plans the
+stroke catalog in three measured passes — ink linework, flat colour
+bed, banded tonal refill — against calibrated brush deposit tables.
+No neural network, no style transfer: everything is measured from the
+reference itself, and planning is deterministic — the same reference
+always plans the same strokes, byte for byte.
+
+```bash
+cd reference
+pip install -r requirements.txt
+python stroke_engine.py plan reference.jpg my_plan.json
+daub render my_plan.json --out painting.png --kra painting.kra
+```
+
 ## Contributing
 
 Built a planner — or an adapter that turns your image pipeline's output

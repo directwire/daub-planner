@@ -1,0 +1,7 @@
+# Reference planner dependencies. scikit-image is strongly recommended:
+# stroke_trace prefers its C-accelerated skeletonize and only falls back
+# to a much slower numpy Zhang-Suen without it.
+numpy>=1.24
+pillow>=10.0
+scipy>=1.11
+scikit-image>=0.21

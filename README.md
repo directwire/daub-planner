@@ -54,6 +54,8 @@ python stroke_engine.py plan reference.jpg my_plan.json
 daub render my_plan.json --out painting.png --kra painting.kra
 ```
 
+The renderer is a separate clone: `git clone https://github.com/directwire/Daub && cd Daub && cargo build --release`, then use `target/release/daub` as `daub` above — its [quick start](https://github.com/directwire/Daub#quick-start) covers both commands in full.
+
 ## Contributing
 
 Built a planner — or an adapter that turns your image pipeline's output

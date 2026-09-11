@@ -47,7 +47,8 @@ python stroke_engine.py plan reference.jpg my_plan.json
 # optional: force one ink brush for every linework mark
 python stroke_engine.py plan reference.jpg my_plan.json --pen "d) Ink-3 Gpen"
 
-# render with daub
+# render with daub (separate repo: clone directwire/Daub and
+# `cargo build --release` — see its quick start)
 daub render my_plan.json --out painting.png --kra painting.kra
 ```
 
